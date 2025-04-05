@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendario Menstrual Hello Kitty</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Calendario Menstrual</h1>
+            <div class="logo">
+                <span class="logo-text">Hello Kitty</span>
+            </div>
+        </header>
+        
+        <div class="calendar-nav">
+            <button class="nav-button" id="prev-year">◄◄</button>
+            <button class="nav-button" id="prev-month">◄</button>
+            <div class="month-year" id="current-month-year">Mes Año</div>
+            <button class="nav-button" id="next-month">►</button>
+            <button class="nav-button" id="next-year">►►</button>
+        </div>
+        
+        <div class="month-selector" id="month-selector">
+            <!-- Los botones de meses se generarán con JavaScript -->
+        </div>
+        
+        <div class="calendar-grid" id="calendar-grid">
+            <!-- Los días del calendario se generarán con JavaScript -->
+        </div>
+        
+        <div class="settings">
+            <h2>Configuración de tu ciclo</h2>
+            <div class="cycle-input">
+                <label for="cycle-length">Duración de tu ciclo (días):</label>
+                <input type="number" id="cycle-length" min="20" max="45" value="28">
+            </div>
+            <div class="cycle-input">
+                <label for="period-length">Duración de tu periodo (días):</label>
+                <input type="number" id="period-length" min="1" max="10" value="5">
+            </div>
+            <button class="save-button" id="save-settings">Guardar Configuración</button>
+        </div>
+    </div>
+    
+    <div class="notification" id="notification">
+        <span class="close-notification">×</span>
+        <div id="notification-message">¡Tu periodo está por llegar en 3 días!</div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

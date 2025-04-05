@@ -1,0 +1,215 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+body {
+    background-color: #ffebf3;
+    color: #ff1493;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: #ff1493;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    width: 80px;
+    height: 80px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45" fill="%23FFFFFF"/><circle cx="35" cy="40" r="10" fill="%23000000"/><circle cx="65" cy="40" r="10" fill="%23000000"/><circle cx="38" cy="37" r="3" fill="%23FFFFFF"/><circle cx="68" cy="37" r="3" fill="%23FFFFFF"/><path d="M30,65 Q50,80 70,65" stroke="%23000000" stroke-width="3" fill="none"/><path d="M50,20 L50,30" stroke="%23000000" stroke-width="2"/><path d="M20,50 L30,50" stroke="%23000000" stroke-width="2"/><path d="M70,50 L80,50" stroke="%23000000" stroke-width="2"/></svg>');
+    background-size: contain;
+    position: relative;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.logo-text {
+    position: absolute;
+    top: -15px;
+    right: -30px;
+    font-size: 14px;
+    color: #ff1493;
+    font-weight: bold;
+}
+
+.calendar-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.month-year {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-button {
+    background-color: #ff69b4;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.nav-button:hover {
+    background-color: #ff1493;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+}
+
+.day-header {
+    text-align: center;
+    font-weight: bold;
+    padding: 10px;
+    background-color: #ffb6c1;
+    border-radius: 5px;
+}
+
+.day {
+    height: 80px;
+    padding: 5px;
+    background-color: white;
+    border-radius: 5px;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.day:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(255, 20, 147, 0.3);
+}
+
+.day-number {
+    font-weight: bold;
+}
+
+.period-day {
+    background-color: #ffc0cb;
+    border: 2px solid #ff1493;
+}
+
+.predicted-period {
+    background-color: #fff0f5;
+    border: 2px dashed #ff69b4;
+}
+
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #ff69b4;
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: none;
+    z-index: 100;
+    animation: slideIn 0.5s forwards;
+}
+
+@keyframes slideIn {
+    from { transform: translateX(100%); }
+    to { transform: translateX(0); }
+}
+
+.close-notification {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.settings {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.settings h2 {
+    margin-bottom: 15px;
+    color: #ff1493;
+}
+
+.cycle-input {
+    margin-bottom: 15px;
+}
+
+.cycle-input label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.cycle-input input {
+    padding: 8px;
+    width: 60px;
+    border: 1px solid #ffb6c1;
+    border-radius: 5px;
+}
+
+.save-button {
+    background-color: #ff69b4;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.save-button:hover {
+    background-color: #ff1493;
+}
+
+.month-selector {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.month-button {
+    padding: 5px 10px;
+    background-color: #ffb6c1;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.month-button:hover, .month-button.active {
+    background-color: #ff69b4;
+    color: white;
+}
